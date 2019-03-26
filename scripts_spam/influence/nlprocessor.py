@@ -3,12 +3,12 @@
 from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
 
-import en_core_web_sm
+import en_core_web_md
 
 class NLProcessor(object):
     def __init__(self):
         # self.nlp = English()
-        self.nlp = en_core_web_sm.load()
+        self.nlp = en_core_web_md.load()
         # self.nlp = spacy.load('en_core_web_sm-1.2.0')
         self.vectorizer = CountVectorizer(min_df=5)  
         self.word_vec_len = 300
@@ -33,8 +33,9 @@ class NLProcessor(object):
         Y[len(spam):] = 0
 
 
-        docs_Y = zip(docs, Y)
-        np.random.shuffle(docs_Y)
+        docs_Y = list(zip(docs, Y))
+        #np.random.shuffle(docs_Y)
+        np.random.shuffle(list(docs_Y))
         docs, Y = zip(*docs_Y)
 
         Y = np.array(Y)

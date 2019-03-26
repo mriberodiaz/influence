@@ -14,8 +14,9 @@ def init_lists(folder):
     a_list = []
     file_list = os.listdir(folder)
     for a_file in file_list:
-        f = open(folder + a_file, 'r')
+        f = open(folder + a_file, 'rb')
         a_list.append(f.read().decode("latin-1"))
+        #a_list.append(f.read())
     f.close()
     return a_list
 
