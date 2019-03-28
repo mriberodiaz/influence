@@ -1,0 +1,1 @@
+Ths folder contains the scripts required to run the data poisoning/adversarial example from the paper for a single image. The training image 1141 was poisoned resulting in the flipping of the prediction on one of the test images.
