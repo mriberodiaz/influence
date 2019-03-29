@@ -37,7 +37,7 @@ class BinaryLogisticRegressionWithLBFGS(LogisticRegressionWithLBFGS):
             fit_intercept=False, 
             solver='lbfgs',
             warm_start=True,
-            max_iter=1000)
+            max_iter=5000)
 
         C_minus_one = 1.0 / ((self.num_train_examples - 1) * self.weight_decay)
         self.sklearn_model_minus_one = linear_model.LogisticRegression(
@@ -46,7 +46,7 @@ class BinaryLogisticRegressionWithLBFGS(LogisticRegressionWithLBFGS):
             fit_intercept=False, 
             solver='lbfgs',
             warm_start=True,
-            max_iter=1000)        
+            max_iter=5000)        
 
 
     def inference(self, input):                
